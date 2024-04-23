@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<head>
+  <meta charset="UTF-8">
+  <title>Oblig 2 s353670</title>
+  <script type="text/javascript" src="index.js"></script>
+  <style>
+    h2 {margin-bottom: 20px}
+    table#skjema td {padding-right: 20px;}
+    input, select {margin: 10px 0px;}
+
+    #antall {width:65px; text-align:center;}
+    #fornavn, #etternavn {text-transform: capitalize;}
+    #errorFilm, #errorAntall, #errorFornavn, #errorEtternavn, #errorTelefon, #errorEpost {color:red;}
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="maintitle">Bestilling av kinobilletter</h2>
+
+      <div id="error"></div>
+      <table id="skjema">
+        <tr>
+          <td>Velg film:</td>
+          <td>
+            <select class="form-control" id="velgFilm">
+              <option value="Ikke valgt">Velg film her</option>
+              <option>Fight Club</option>
+              <option>Wolf of WallStreet</option>
+              <option>Avatar</option>
+              <option>Watchmen</option>
+              <option>The Batman</option>
+              <option>One Piece</option>
+            </select>
+          </td>
+          <td><div id="errorFilm"></div></td>
+        </tr>
+        <tr>
+          <td>Antall billetter:</td>
+          <td><input class="form-control" type="number" min="1" id="antall"></td>
+          <td><div id="errorAntall"></div></td>
+        </tr>
+
+        <tr><td><br /></td><td></td></tr> <!--Blank kolonne for mellomrom-->
+
+        <tr>
+          <td>Fornavn:</td>
+          <td><input class="form-control" type="text" id="fornavn"></td>
+          <td><div id="errorFornavn"></div></td>
+        </tr>
+        <tr>
+          <td>Etternavn:</td>
+          <td><input class="form-control" type="text" id="etternavn"></td>
+          <td><div id="errorEtternavn"></div></td>
+        </tr>
+        <tr>
+          <td>Telefon Nr:</td>
+          <td><input class="form-control" type="text" id="telefon"></td>
+          <td><div id="errorTelefon"></div></td>
+        </tr>
+        <tr>
+          <td>Epost:</td>
+          <td><input class="form-control" type="text" id="epost"></td>
+          <td><div id="errorEpost"></div></td>
+        </tr>
+      </table>
+
+      <br /><br />
+      <button class="btn btn-success" onclick="regBillett()">Kjøp billett</button>
+    </div>
+    <div class="col-md-6">
+      <h2>Alle bestillinger</h2>
+      <div id="tabell"></div>
+      <button class="btn btn-danger" id="Nullstill" onclick="nullstill()">Slett alle bestillingene</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
