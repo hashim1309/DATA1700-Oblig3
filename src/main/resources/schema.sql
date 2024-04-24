@@ -1,4 +1,4 @@
-CREATE TABLE kino(
+CREATE TABLE Kino(
                      antall INTEGER NOT NULL ,
                      telfnr INTEGER NOT NULL ,
                      film VARCHAR(255) NOT NULL ,

@@ -10,15 +10,15 @@ import java.util.List;
 @RestController
 public class kontroller {
 
-    private final List<kino> billetter = new ArrayList<>();
+    private final List<Kino> billetter = new ArrayList<>();
 
     @PostMapping("/lagre")
-    public void lagreBillett(kino innBillett){
+    public void lagreBillett(Kino innBillett){
         billetter.add(innBillett);
     }
 
     @GetMapping("/hentAlle")
-    public List<kino> hentAlle(){
+    public List<Kino> hentAlle(){
         return billetter;
     }
 
