@@ -18,7 +18,7 @@ public class kundeRepository {
     private JdbcTemplate db;
 
     public void lagre(Kino billett) {
-        String sql = "INSERT INTO kino (film, antall, fnavn, enavn, telfnr, epost) VALUES(?,?,?,?,?,?)";
+        String sql = "INSERT INTO Kino (film, antall, fnavn, enavn, telfnr, epost) VALUES(?,?,?,?,?,?)";
         db.update(sql, billett.getFilm(), billett.getAntall(), billett.getFornavn(), billett.getEtternavn(), billett.getTelefon(), billett.getEpost());
     }
 
@@ -29,7 +29,7 @@ public class kundeRepository {
     }
 
     public void slettAlle() {
-        String sql = "DELETE FROM kino";
+        String sql = "DELETE FROM Kino";
         db.update(sql);
     }
 }
