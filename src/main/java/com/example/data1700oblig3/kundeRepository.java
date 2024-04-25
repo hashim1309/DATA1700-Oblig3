@@ -18,8 +18,8 @@ public class kundeRepository {
     private JdbcTemplate db;
 
     public void lagre(Kino billett) {
-        String sql = "INSERT INTO Kino (film, antall, fnavn, enavn, telfnr, epost) VALUES(?,?,?,?,?,?)";
-        db.update(sql, billett.getFilm(), billett.getAntall(), billett.getFornavn(), billett.getEtternavn(), billett.getTelefon(), billett.getEpost());
+        String sql = "INSERT INTO Kino (antall, telfnr, film, fname, ename, epost) VALUES(?,?,?,?,?,?)";
+        db.update(sql, billett.getAntall(), billett.getTelefon(), billett.getFilm(), billett.getFornavn(), billett.getEtternavn(), billett.getEpost());
     }
 
     public List<Kino> hentAlle() {
