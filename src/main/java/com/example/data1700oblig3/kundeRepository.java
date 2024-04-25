@@ -18,14 +18,14 @@ public class kundeRepository {
     private JdbcTemplate db;
 
     public void lagre(Kino billett) {
-        String sql = "INSERT INTO Kino (antall, telfnr, film, fname, ename, epost) VALUES(?,?,?,?,?,?)";
+        String sql = "INSERT INTO Kino (antall, telefon, film, fornavn, etternavn, epost) VALUES(?,?,?,?,?,?)";
         db.update(sql, billett.getAntall(), billett.getTelefon(), billett.getFilm(), billett.getFornavn(), billett.getEtternavn(), billett.getEpost());
     }
 
     public List<Kino> hentAlle() {
-        String sql = "SELECT * FROM Kino ORDER BY enavn";
-        List<Kino> billetter = db.query(sql, new BeanPropertyRowMapper(Kino.class));
-        return billetter;
+        String sql = "SELECT * FROM Kino ORDER BY etternavn";
+        List<Kino> biletter = db.query(sql, new BeanPropertyRowMapper(Kino.class));
+        return biletter;
     }
 
     public void slettAlle() {
